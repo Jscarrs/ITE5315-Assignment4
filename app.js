@@ -22,7 +22,7 @@ app.set("views", __dirname + "/views");
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 // MongoDB
 mongoose
