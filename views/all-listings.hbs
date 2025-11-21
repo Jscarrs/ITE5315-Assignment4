@@ -1,0 +1,62 @@
+<div class="header-bar">
+    <h1>All AirBnB Listings</h1>
+
+    <a href="/listings/add" class="btn-primary">
+        <i class="fas fa-plus"></i> Add New Listing
+    </a>
+</div>
+
+<!-- Search Section -->
+<div class="search-section">
+    <h3>Find a Listing</h3>
+
+    <form action="/listings/search" method="GET" class="search-form">
+        <div class="search-field">
+            <label for="searchId">Listing ID</label>
+            <input 
+                type="text"
+                id="searchId"
+                name="id"
+                placeholder="e.g., 1529335"
+                required
+            >
+        </div>
+
+        <button type="submit" class="btn-secondary">
+            <i class="fas fa-search"></i>
+            Search
+        </button>
+    </form>
+</div>
+
+<!-- LISTINGS GRID -->
+{{#if listings.length}}
+<div class="grid">
+    {{#each listings}}
+
+        <a class="listing-card" href="/listings/{{this.id}}">
+
+            {{!-- Image Priority: thumbnail → first image → fallback --}}
+            {{#if this.thumbnail}}
+                <img class="listing-img" src="{{this.thumbnail}}" alt="{{this.name}}">
+            {{else if this.images}}
+                <img class="listing-img" src="{{this.images.[0]}}" alt="{{this.name}}">
+            {{else}}
+                <img class="listing-img" src="https://picsum.photos/seed/{{this.id}}/600/400" alt="Listing Image">
+            {{/if}}
+
+            <div class="card-inner">
+                <h4>{{this.NAME}}</h4>
+                <p style="color:#aaa; font-size:13px;">ID: {{this.id}}</p>
+
+                <span class="price">{{this.price}} / night</span>
+            </div>
+
+        </a>
+
+    {{/each}}
+</div>
+
+{{else}}
+<p class="no-results">No listings found.</p>
+{{/if}}

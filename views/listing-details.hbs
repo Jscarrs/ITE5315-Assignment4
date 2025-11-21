@@ -1,0 +1,50 @@
+<div class="header-bar">
+    <h1>{{listing.NAME}}</h1>
+</div>
+
+<!-- Listing ID -->
+<p class="listing-id">Listing ID: <strong>{{listing.id}}</strong></p>
+
+<!-- Listing Image -->
+{{#if listing.thumbnail}}
+    <img class="detail-img" src="{{listing.thumbnail}}" alt="{{listing.NAME}}">
+{{else}}
+    <img class="detail-img" src="https://picsum.photos/seed/{{listing.id}}/900/600" alt="Listing Image">
+{{/if}}
+
+<!-- Price -->
+<p class="price detail-price">
+    ${{listing.price}} / night
+</p>
+
+
+<h3 style="color:#ff1a1a; margin-top: 20px;">Property Details:</h3>
+<ul>
+    <li><strong>Room Type:</strong> {{listing.[room type]}}</li>
+    <li><strong>Neighbourhood:</strong> {{listing.neighbourhood}}</li>
+    <li><strong>Neighbourhood Group:</strong> {{listing.[neighbourhood group]}}</li>
+    <li><strong>Property Type:</strong> {{listing.property_type}}</li>
+</ul>
+
+
+<h3 style="color:#ff1a1a; margin-top: 20px;">Reviews:</h3>
+<ul>
+    <li><strong>Total Reviews:</strong> {{listing.[number of reviews]}}</li>
+    <li><strong>Reviews per Month:</strong> {{listing.[reviews per month]}}</li>
+</ul>
+
+<h3 style="color:#ff1a1a; margin-top: 20px;">Host:</h3>
+<ul>
+    <li><strong>Host ID:</strong> {{listing.[host id]}}</li>
+    <li><strong>Host Name:</strong> {{listing.[host name]}}</li>
+</ul>
+
+<div class="form-actions" style="margin-top: 25px;">
+    <a href="/listings" class="btn-secondary">
+        <i class="fas fa-arrow-left"></i> Back to Listings
+    </a>
+
+    <a href="/listings/add" class="btn-primary">
+        <i class="fas fa-plus"></i> Add New Listing
+    </a>
+</div>

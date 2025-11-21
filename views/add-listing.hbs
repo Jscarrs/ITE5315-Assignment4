@@ -1,0 +1,109 @@
+<div class="header-bar">
+    <h1>Add New Listing</h1>
+</div>
+
+<div class="form-panel">
+
+    <form action="/listings/add" method="POST" class="listing-form">
+
+        <!-- Listing ID -->
+        <div class="form-group">
+            <label for="id">Listing ID</label>
+            <input type="number" id="id" name="id" placeholder="e.g., 1600001" required>
+            <small>Must be unique. Numbers only.</small>
+        </div>
+
+        <!-- Title -->
+        <div class="form-group">
+            <label for="title">Listing Title</label>
+            <input type="text" id="title" name="title" placeholder="e.g., Beautiful Downtown Loft" required>
+        </div>
+
+        <!-- Price -->
+        <div class="form-group">
+            <label for="price">Price per Night</label>
+            <input type="number" id="price" name="price" placeholder="e.g., 370" required>
+        </div>
+
+        <!-- Host -->
+        <div class="form-group">
+            <label for="hostId">Host ID</label>
+            <input type="number" id="hostId" name="hostId" placeholder="e.g., 123456789" required>
+        </div>
+
+        <div class="form-group">
+            <label for="hostName">Host Name</label>
+            <input type="text" id="hostName" name="hostName" placeholder="e.g., John Smith" required>
+        </div>
+
+        <!-- Property Type -->
+        <div class="form-group">
+            <label for="propertyType">Property Type</label>
+            <select id="propertyType" name="propertyType" required>
+                <option value="" disabled selected>Select Property Type</option>
+                <option>Entire Place</option>
+                <option>Private Room</option>
+                <option>Shared Room</option>
+            </select>
+        </div>
+
+        <!-- Room Type -->
+        <div class="form-group">
+            <label for="roomType">Room Type</label>
+            <select id="roomType" name="roomType" required>
+                <option value="" disabled selected>Select Room Type</option>
+                <option>Master Bedroom</option>
+                <option>Studio</option>
+                <option>Guest Room</option>
+            </select>
+        </div>
+
+        <!-- Neighbourhood Group -->
+        <div class="form-group">
+            <label for="neighbourhoodGroup">Neighbourhood Group</label>
+            <select id="neighbourhoodGroup" name="neighbourhoodGroup" required>
+                <option value="" disabled selected>Select Neighbourhood Group</option>
+                <option>Downtown</option>
+                <option>Uptown</option>
+                <option>Midtown</option>
+            </select>
+        </div>
+
+        <!-- Neighbourhood -->
+        <div class="form-group">
+            <label for="neighbourhood">Neighbourhood</label>
+            <input type="text" id="neighbourhood" name="neighbourhood" placeholder="e.g., Midtown, Williamsburg" required>
+        </div>
+
+        <!-- Minimum nights -->
+        <div class="form-group">
+            <label for="minimumNights">Minimum Nights</label>
+            <input type="number" id="minimumNights" name="minimumNights" placeholder="e.g., 2" required>
+        </div>
+
+        <!-- Country -->
+        <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" placeholder="e.g., United States" required>
+        </div>
+
+        <!-- Image URL -->
+        <div class="form-group">
+            <label for="imageUrl">Thumbnail Image URL</label>
+            <input type="text" id="imageUrl" name="imageUrl" placeholder="https://picsum.photos/seed/123/600/400">
+        </div>
+
+        <!-- House Rules -->
+        <div class="form-group">
+            <label for="houseRules">House Rules</label>
+            <textarea id="houseRules" name="houseRules" placeholder="Optional house rules..."></textarea>
+        </div>
+
+        <!-- Button Row -->
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">Create Listing</button>
+            <a href="/listings" class="btn-secondary">Cancel</a>
+        </div>
+
+    </form>
+</div>
